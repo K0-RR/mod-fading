@@ -9,7 +9,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
 @Mixin(CandleCakeBlock.class)
-public class CakeMixin {
+public abstract class CakeMixin {
 
 	/**
 	 * Needed since 1.18 to make custom flint&steels work with the new candle cake block
