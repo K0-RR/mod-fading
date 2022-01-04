@@ -63,7 +63,7 @@ public abstract class LanternBlockMixin extends Block {
 
     private void scheduleIfApplicable( World world, BlockPos pos ) {
         if( canFade() ) {
-            world.getBlockTickScheduler().schedule(pos, (LanternBlock) (Object) this, Utils.getLanternTime(world));
+            world.createAndScheduleBlockTick(pos, (LanternBlock) (Object) this, Utils.getLanternTime(world));
         }
     }
 

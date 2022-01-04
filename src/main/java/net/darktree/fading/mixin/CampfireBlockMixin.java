@@ -88,7 +88,8 @@ public abstract class CampfireBlockMixin extends Block {
 
     @Inject(at=@At("HEAD"), method="spawnSmokeParticle(Lnet/minecraft/world/World;Lnet/minecraft/util/math/BlockPos;ZZ)V", cancellable = true)
     private static void spawnSmokeParticle(World world, BlockPos pos, boolean isSignal, boolean lotsOfSmoke, CallbackInfo ci) {
-        if( world.random.nextInt(1 + (int) Math.pow( 2, world.getBlockState(pos).get(SIZE) ) ) == 0 ) {
+        BlockState state = world.getBlockState(pos);
+        if( state.getProperties().contains(SIZE) && world.random.nextInt(1 + (int) Math.pow(2, state.get(SIZE)) ) == 0 ) {
             if( Utils.isExtinguishable( world.getBlockState(pos).getBlock() ) ) {
                 ci.cancel();
             }
@@ -136,7 +137,7 @@ public abstract class CampfireBlockMixin extends Block {
     }
 
     private void schedule( World world, BlockPos pos ) {
-        world.getBlockTickScheduler().schedule(pos, (CampfireBlock) (Object) this, Utils.getCampfireTime(world));
+        world.createAndScheduleBlockTick(pos, (CampfireBlock) (Object) this, Utils.getCampfireTime(world));
     }
 
     public boolean canFade() {

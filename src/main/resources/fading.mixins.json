@@ -4,6 +4,7 @@
   "package": "net.darktree.fading.mixin",
   "compatibilityLevel": "JAVA_16",
   "mixins": [
+    "CakeMixin",
     "CampfireBlockMixin",
     "LanternBlockMixin",
     "RecipeManagerMixin",

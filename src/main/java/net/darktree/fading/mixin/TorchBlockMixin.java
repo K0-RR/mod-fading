@@ -60,7 +60,7 @@ public abstract class TorchBlockMixin extends Block {
 
     private void scheduleIfApplicable( World world, BlockPos pos ) {
         if( canFade() ) {
-            world.getBlockTickScheduler().schedule(pos, (TorchBlock) (Object) this, Utils.getTorchTime(world));
+            world.createAndScheduleBlockTick(pos, (TorchBlock) (Object) this, Utils.getTorchTime(world));
         }
     }
 
