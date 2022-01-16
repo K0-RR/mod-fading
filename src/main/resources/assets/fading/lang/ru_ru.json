@@ -1,0 +1,13 @@
+{
+    "block.minecraft.extinguished_torch": "Потушенный факел",
+    "block.minecraft.extinguished_lantern": "Потушенный фонарь",
+    "block.minecraft.extinguished_soul_torch": "Потушенный факел душ",
+    "block.minecraft.extinguished_soul_lantern": "Потушенный фонарь душ",
+    "item.fading.flint_and_flint": "Кремниевое огниво",
+    "item.fading.flint_and_gold": "Золотое огниво",
+    "item.fading.flint_and_diamond": "Алмазное огниво",
+	"stat.fading.extinguish_torch": "Факелы потушены",
+    "stat.fading.extinguish_lantern": "Фонари потушены",
+    "stat.fading.ignite_torch": "Факелы зажженны",
+    "stat.fading.ignite_lantern": "Фонари зажженны"
+}
